@@ -9,7 +9,7 @@ on:
 
 jobs:
   setup:
-    uses: cloudposse/github-action-matrix-outputs-write/.github/workflows/setup-test.yml@main
+    uses: itisopen/github-action-matrix-outputs-write/.github/workflows/setup-test.yml@itisopen
     strategy:
       matrix:
         target: ["one", "two"]

@@ -1,7 +1,7 @@
 {
   "name": "matrix-outputs-write",
   "version": "1.0.0",
-  "description": "<!-- markdownlint-disable --> # github-action-matrix-outputs-write [![Latest Release](https://img.shields.io/github/release/cloudposse/github-action-matrix-outputs-write.svg)](https://github.com/cloudposse/github-action-matrix-outputs-write/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com) <!-- markdownlint-restore -->",
+  "description": "<!-- markdownlint-disable --> # github-action-matrix-outputs-write [![Latest Release](https://img.shields.io/github/release/itisopen/github-action-matrix-outputs-write.svg)](https://github.com/itisopen/github-action-matrix-outputs-write/releases/latest) [![Slack Community](https://slack.itisopen.com/badge.svg)](https://slack.itisopen.com) <!-- markdownlint-restore -->",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cloudposse/github-action-matrix-outputs.git"
+    "url": "git+https://github.com/itisopen/github-action-matrix-outputs.git#itisopen"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cloudposse/github-action-matrix-outputs/issues"
+    "url": "https://github.com/itisopen/github-action-matrix-outputs/issues"
   },
   "homepage": "https://github.com/marketplace/actions/matrix-outputs-write",
   "dependencies": {

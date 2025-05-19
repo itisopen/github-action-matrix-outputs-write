@@ -18,21 +18,21 @@ tags:
 license: "APACHE2"
 
 # Canonical GitHub repo
-github_repo: cloudposse/github-action-matrix-outputs-write
+github_repo: itisopen/github-action-matrix-outputs-write
 
 # Badges to display
 badges:
   - name: "Latest Release"
-    image: "https://img.shields.io/github/release/cloudposse/github-action-matrix-outputs-write.svg"
-    url: "https://github.com/cloudposse/github-action-matrix-outputs-write/releases/latest"
+    image: "https://img.shields.io/github/release/itisopen/github-action-matrix-outputs-write.svg"
+    url: "https://github.com/itisopen/github-action-matrix-outputs-write/releases/latest"
   - name: "Slack Community"
-    image: "https://slack.cloudposse.com/badge.svg"
-    url: "https://slack.cloudposse.com"
+    image: "https://slack.itisopen.com/badge.svg"
+    url: "https://slack.itisopen.com"
 
 related:
   - name: "github-action-matrix-outputs-read"
     description: "Matrix outputs read"
-    url: "https://github.com/cloudposse/github-action-matrix-outputs-read"
+    url: "https://github.com/itisopen/github-action-matrix-outputs-read"
 
 # Short description of this project
 description: |
@@ -45,16 +45,16 @@ introduction: |-
   
   There is a [workaround](https://github.com/community/community/discussions/17245#discussioncomment-3814009) to address the limitation.
   We implement the workaround with two GitHub Actions:
-  * [Matrix Outputs Write](https://github.com/cloudposse/github-action-matrix-outputs-write)
-  * [Matrix Outputs Read](https://github.com/cloudposse/github-action-matrix-outputs-read)
+  * [Matrix Outputs Write](https://github.com/itisopen/github-action-matrix-outputs-write)
+  * [Matrix Outputs Read](https://github.com/itisopen/github-action-matrix-outputs-read)
   
   ## v1 - What's new
   
   > [!IMPORTANT]
-  > cloudposse/github-action-matrix-outputs-write@v1+ is not currently supported on GHES yet. If you are on GHES, you 
-  > must use [v0](https://github.com/cloudposse/github-action-matrix-outputs-write/releases/tag/0.5.0).
+  > itisopen/github-action-matrix-outputs-write@v1+ is not currently supported on GHES yet. If you are on GHES, you 
+  > must use [v0](https://github.com/itisopen/github-action-matrix-outputs-write/releases/tag/0.5.0).
   
-  The release of `cloudposse/github-action-matrix-outputs-write@v1` and `cloudposse/github-action-matrix-outputs-read@v1` 
+  The release of `itisopen/github-action-matrix-outputs-write@v1` and `itisopen/github-action-matrix-outputs-read@v1` 
   are major changes to the backend architecture of Artifacts. They have numerous performance and behavioral improvements.
   
   For more information, see the [`@actions/artifact`](https://github.com/actions/toolkit/tree/main/packages/artifact) documentation.
@@ -62,15 +62,15 @@ introduction: |-
   ### Breaking Changes
   
   1. On self hosted runners, additional [firewall rules](https://github.com/actions/toolkit/tree/main/packages/artifact#breaking-changes) may be required.
-  2. Outputs writen with `cloudposse/github-action-matrix-outputs-write@v1` can not be read by `cloudposse/github-action-matrix-outputs-read@v0`and below versions.  
+  2. Outputs writen with `itisopen/github-action-matrix-outputs-write@v1` can not be read by `itisopen/github-action-matrix-outputs-read@v0`and below versions.  
 
 references:
   - name: "github-actions-workflows"
     description: "Reusable workflows for different types of projects"
-    url: "https://github.com/cloudposse/github-actions-workflows"
+    url: "https://github.com/itisopen/github-actions-workflows"
   - name: "example-github-action-release-workflow"
     description: "Example application with complicated release workflow"
-    url: "https://github.com/cloudposse/example-github-action-release-workflow"
+    url: "https://github.com/itisopen/example-github-action-release-workflow"
 
 # How to use this project
 usage: |-
@@ -95,7 +95,7 @@ usage: |-
   
           - name: Build
             id: build
-            uses: cloudposse/github-action-docker-build-push@1.9.0
+            uses: itisopen/github-action-docker-build-push@1.9.0
             with:
               registry: registry.hub.docker.com
               organization: "${{ github.event.repository.owner.login }}"
@@ -104,7 +104,7 @@ usage: |-
                 PLATFORM=${{ matrix.platform }}
 
           ## Write for matrix outputs workaround 
-          - uses: cloudposse/github-action-matrix-outputs-write@v1
+          - uses: itisopen/github-action-matrix-outputs-write@v1
             id: out
             with:
               matrix-step-name: ${{ github.job }}
@@ -119,7 +119,7 @@ usage: |-
         runs-on: ubuntu-latest
         needs: [build]
         steps:
-          - uses: cloudposse/github-action-matrix-outputs-read@v1
+          - uses: itisopen/github-action-matrix-outputs-read@v1
             id: read
             with:
               matrix-step-name: build
@@ -188,7 +188,7 @@ usage: |-
 
         - name: Build
           id: build
-          uses: cloudposse/github-action-docker-build-push@1.9.0
+          uses: itisopen/github-action-docker-build-push@1.9.0
           with:
             registry: ${{ inputs.registry }}
             organization: ${{ inputs.organization }}
@@ -203,7 +203,7 @@ usage: |-
       needs: [build]
       steps:        
         ## Write for matrix outputs workaround 
-        - uses: cloudposse/github-action-matrix-outputs-write@v1
+        - uses: itisopen/github-action-matrix-outputs-write@v1
           id: out
           with:
             matrix-step-name: ${{ inputs.matrix-step-name }}
@@ -244,7 +244,7 @@ usage: |-
       runs-on: ubuntu-latest
       needs: [build]
       steps:
-        - uses: cloudposse/github-action-matrix-outputs-read@v1
+        - uses: itisopen/github-action-matrix-outputs-read@v1
           id: read
           with:
             matrix-step-name: build
